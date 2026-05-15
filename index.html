@@ -16,7 +16,7 @@ canvas { display: block; width: 100vw; height: 100dvh; touch-action: none; }
 // === CONFIG ===
 const CFG = {
   MOB_SPEED: 120,
-  MOB_RADIUS: 14,
+  MOB_RADIUS: 9,
   MAX_MOBS: 30,
   CLUSTER_LAG: 0.13,
   BOSS_R: 92,
@@ -29,9 +29,9 @@ const CFG = {
   SHAKE_FINAL: 1.1,
   POOL: 400,
   LS_KEY: 'magnusMobBestLevel',
-  GATE_TOP_YF: 0.20,
+  GATE_TOP_YF: 0.3,
   GATE_BOT_YF: 0.70,
-  GATE_HEIGHT: 64,
+  GATE_HEIGHT: 40,
   // Bright Mob Control-style gradients
   GRAD: [
     ['#7c5cff','#3a1f9e'],
@@ -756,23 +756,23 @@ function drawHUD() {
   ctx.shadowColor='rgba(0,0,0,0.55)';
   ctx.shadowBlur=18; ctx.shadowOffsetY=5;
   ctx.fillStyle='#15172b';
-  rrect(-bw/2,-bh/2,bw,bh,bh/2); ctx.fill();
+  rrect(-bw/2 + 500,-bh/2 + 100,bw,bh,bh/2); ctx.fill();
   ctx.restore();
   // Inner highlight
   var hg=ctx.createLinearGradient(0,-bh/2,0,0);
   hg.addColorStop(0,'rgba(255,255,255,0.3)');
   hg.addColorStop(1,'rgba(255,255,255,0)');
   ctx.fillStyle=hg;
-  rrect(-bw/2,-bh/2,bw,bh*0.55,bh/2); ctx.fill();
+  rrect(-bw/2 + 500,-bh/2 + 100,bw,bh*0.55,bh/2); ctx.fill();
   // Border
   ctx.strokeStyle='rgba(255,255,255,0.7)';
   ctx.lineWidth=2.5;
-  rrect(-bw/2,-bh/2,bw,bh,bh/2); ctx.stroke();
+  rrect(-bw/2 + 500,-bh/2 + 100,bw,bh,bh/2); ctx.stroke();
   // Count
   ctx.font='900 '+Math.round(FS*1.85)+'px system-ui,sans-serif';
   ctx.textAlign='center'; ctx.textBaseline='middle';
   ctx.fillStyle='#fff';
-  ctx.fillText(S.count,0,0);
+  ctx.fillText(S.count,500,100);
   ctx.restore();
 
   // Level/year corner badge
