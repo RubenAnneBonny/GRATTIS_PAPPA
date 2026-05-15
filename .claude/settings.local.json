@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(Get-ChildItem *)",
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\ruben\\\\Github\\\\GRATTIS_PAPPA\" -Force -ErrorAction SilentlyContinue | ForEach-Object { Write-Output \"$\\($_.Name\\) $\\(if \\($_.PSIsContainer\\) { '[DIR]' } else { '[FILE]' }\\)\" })",
+      "Bash(Get-Content *)",
+      "PowerShell($f = Get-Item \"C:\\\\Users\\\\ruben\\\\Github\\\\GRATTIS_PAPPA\\\\index.html\"; Write-Host \"Size: $\\($f.Length\\) bytes, Modified: $\\($f.LastWriteTime\\)\")",
+      "Bash(timeout 2)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
+      "Bash(curl -s -o NUL -w \"%{http_code}\" http://localhost:8080/)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}
